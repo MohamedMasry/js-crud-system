@@ -1,0 +1,75 @@
+/* Global classes */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(90deg, #ffe3e3, #b8eeee, #ffe3e3, #b8eeee);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-duration: 0.3s;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.glassy {
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+}
+
+form>span{
+  margin-bottom: 50px;
+}
+
+.input-group>.form-control:focus {
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+body:has(.input-group>.form-control:focus) .input-group i {
+  animation: fading 1.5s ease infinite;
+  color: white;
+  filter: drop-shadow(0px 0px 1px #0b5dd7);
+}
+
+@keyframes fading{
+  50% {
+    opacity: 0.5;
+  }
+}
+

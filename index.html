@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Mohamed Essam Ahmed</title>
+
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+    <form class="glassy mx-auto w-50 p-5 my-5 ">
+        <h1 class="text-center mb-4">CRUD System</h1>
+
+        <label for="prodName" class="position-relative">Product Name:</label>
+        <input class="form-control" type="email" id="prodName">
+        <div id="prodNameInvalid" class=" d-none">
+            <span class="text-danger">
+                Name should start with an uppercase letter and it's just up to 60 characters.
+            </span>
+        </div>
+
+
+        <label for="prodPrice">Product Price:</label>
+        <input class="form-control" type="number" id="prodPrice">
+        <div id="prodPriceInvalid" class=" d-none">
+            <span class="text-danger">
+                Price should be a number between 1 and 100000.
+            </span>
+        </div>
+
+        <label for="prodCategory">Product Category:</label>
+        <input class="form-control" type="text" id="prodCategory">
+        <div id="prodCategoryInvalid" class=" d-none">
+            <span class="text-danger">
+                Category should be one or two words and doesn't start with number.
+            </span>
+        </div>
+
+        <label for="prodDesc">Product Description:</label>
+        <textarea class="form-control" id="prodDesc" cols="30" rows="2"></textarea>
+
+        <button id="addBtn" type="button" class="btn btn-primary mt-3 " onclick="addProduct()">Add Product</button>
+        <button id="updateBtn" style="display: none;" type="button" class="btn btn-warning mt-3 "
+            onclick="setUpdate()">Update</button>
+        <button type="button" class="btn btn-primary mt-3 " onclick="clearForm()">Clear</button>
+
+    </form>
+
+    <div class="input-group my-5 w-25 mx-auto">
+        <span class="input-group-text glassy" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input id="searchProd" oninput="searchProducts()" type="search" class="form-control" placeholder="Search..."
+            aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="glassy table-responsive w-75 mx-auto mb-5">
+        <table class="table table-bordered table-striped table-hover text-center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="productsTable">
+
+
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
